@@ -1,36 +1,48 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { Check, ChevronsUpDown, GalleryVerticalEnd } from "lucide-react"
+import * as React from "react";
+import { Check, ChevronsUpDown, GalleryVerticalEnd } from "lucide-react";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
+import { useRouter } from "next/navigation";
 
 export function VersionSwitcher({
   versions,
   defaultVersion,
 }: {
-  versions: string[]
-  defaultVersion: string
+  versions: string[];
+  defaultVersion: string;
 }) {
-  const [selectedVersion, setSelectedVersion] = React.useState(defaultVersion)
+  const [selectedVersion, setSelectedVersion] = React.useState(defaultVersion);
+
+  const router = useRouter();
+
+  const handleReturnToDashboard = () => {
+    router.push('/dashboard')
+  }
 
   return (
-    <div>
-      eValuate enterprise
+    <div onClick={handleReturnToDashboard} className="mb-2 flex gap-2 leading-none p-3 rounded-md hover:bg-gray-200 bg-gray-100 transition">
+      <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+        <GalleryVerticalEnd className="size-4" />
+      </div>
+      <div>
+        <p className="font-semibold">eValuate</p>
+        <p className="text-xs">Dashboard</p>{" "}
+      </div>
     </div>
-  )
+  );
 }
-
 
 // export function VersionSwitcher({
 //   versions,
@@ -46,7 +58,7 @@ export function VersionSwitcher({
 //       <SidebarMenuItem>
 //         <DropdownMenu>
 //           <DropdownMenuTrigger asChild>
-//             <SidebarMenuButton 
+//             <SidebarMenuButton
 //               size="lg"
 //               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
 //             >

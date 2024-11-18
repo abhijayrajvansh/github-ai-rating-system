@@ -1,11 +1,10 @@
 import React from "react";
-import Navigationbar from "../Navigationbar";
+import ContainerNavigation from "../ContainerNavigation";
 
 const GithubAgent = () => {
   return (
     <>
-      <Navigationbar />
-      
+      <ContainerNavigation />
     </>
   );
 };
