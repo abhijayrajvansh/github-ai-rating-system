@@ -6,7 +6,15 @@ const Dashboard = () => {
     <>
       <ContainerNavigation>
         <section className="p-4">
-          dasboard
+          dashboard content
+        
+        
+        
+        
+        
+        
+        
+        
         </section>
       </ContainerNavigation>
     </>
