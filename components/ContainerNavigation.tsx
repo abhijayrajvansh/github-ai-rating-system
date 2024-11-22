@@ -1,21 +1,12 @@
-import { AppSidebar } from "@/components/app-sidebar"
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Separator } from "@/components/ui/separator"
+import { AppSidebar } from "@/components/app-sidebar";
+import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger,
-} from "@/components/ui/sidebar"
+} from "@/components/ui/sidebar";
 
-
-const ContainerNavigation = ({ children }: { children: React.ReactNode}) => {
+const ContainerNavigation = ({ children }: { children: React.ReactNode }) => {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -28,7 +19,7 @@ const ContainerNavigation = ({ children }: { children: React.ReactNode}) => {
         {children}
       </SidebarInset>
     </SidebarProvider>
-  )
-}
+  );
+};
 
-export default ContainerNavigation
+export default ContainerNavigation;
