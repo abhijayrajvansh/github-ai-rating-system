@@ -21,9 +21,17 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { ChevronUp, User2 } from "lucide-react";
+import {
+  ChevronUp,
+  Settings,
+  HelpCircle,
+  LogOut,
+  CreditCard,
+  Crown,
+} from "lucide-react";
 import Image from "next/image";
 
 // This is sample data.
@@ -97,9 +105,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <SidebarMenuButton className="py-5">
+                <SidebarMenuButton className="py-7 px-2">
                   <div className="flex gap-3 items-center justify-between">
-                    <Image width={32} height={32} className="rounded-lg"
+                    <Image
+                      width={32}
+                      height={32}
+                      className="rounded-lg"
                       src="https://www.abhijayrajvansh.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fabhijayrajvansh-avatar.595fe0e6.jpg&w=256&q=75"
                       alt="logged-in-user"
                     />
@@ -116,12 +127,26 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 className="w-[--radix-popper-anchor-width]"
               >
                 <DropdownMenuItem>
-                  <span>Account</span>
+                  <Crown className="mr-2 h-4 w-4" />
+                  <span>Upgrade to Pro</span>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <Settings className="mr-2 h-4 w-4" />
+                  <span>Settings</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
-                  <span>Billing</span>
+                  <HelpCircle className="mr-2 h-4 w-4" />
+                  <span>Help & Support</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
+                  <CreditCard className="mr-2 h-4 w-4" />
+                  <span>Billings</span>
+                </DropdownMenuItem>
+
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <LogOut className="mr-2 h-4 w-4" />
                   <span>Sign out</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
