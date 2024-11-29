@@ -48,6 +48,16 @@ const data = {
         },
       ],
     },
+    {
+      title: "Filter Seperate Portfolios",
+      url: "#",
+      items: [
+        {
+          title: "Projects",
+          url: "/dashboard/analyze/projects",
+        },
+      ],
+    },
   ],
 };
 
